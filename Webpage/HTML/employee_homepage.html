@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Homepage</title>
+    <link rel="stylesheet" href="/CSS/homepage.css" />
+    <link
+      rel="stylesheet"
+      href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="topnav">
+      <h1>Employee Homepage</h1>
+      <a href="#logout" onclick="Logout()" id="logout">Logout</a>
+      <a id="viewReimbursement" href="#reimbursementTable"
+        >View My Reimbursement</a
+      >
+      <a id="createReimbursement" href="#create">Create Reimbursement</a>
+      <a href="#home">Home</a>
+    </div>
+    <div class="container">
+      <h3>Create Reimbursement</h3>
+      <table class="styled-table" id="createTable">
+        <thead id="createHead">
+          <tr>
+            <th>User id</th>
+            <th>Expense Name</th>
+            <th>Expense Amount</th>
+            <th>Expense Detail</th>
+            <th>Status</th>
+            <th>Manager Comment</th>
+          </tr>
+        </thead>
+        <tbody id="createBody">
+          <tr>
+            <td>
+              <input type="text" id="userId" />
+            </td>
+            <td>
+              <input type="text" id="expenseName" />
+            </td>
+            <td>
+              <input type="number" id="expenseAmount" />
+            </td>
+            <td>
+              <input type="text" id="expenseDetail" />
+            </td>
+            <td>
+              <input type="text" id="expenseStatus" />
+            </td>
+            <td>
+              <input type="text" id="userComment" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="submit-button">
+        <button onclick="createReimbursement()" id="createReimbursementButton">
+          Submit
+        </button>
+      </div>
+      <br />
+      <table class="styled-table sortable" id="reimbursementTable">
+        <thead id="reimbursementHead">
+          <h3>My Reimbursements</h3>
+          <tr>
+            <th>Request ID</th>
+            <th>User ID</th>
+            <th>Expense Name</th>
+            <th>Expense Amount</th>
+            <th>Expense Detail</th>
+            <th>Status</th>
+            <th>Manager Comment</th>
+          </tr>
+        </thead>
+        <tbody id="reimbursementBody"></tbody>
+      </table>
+    </div>
+    <script src="/Javascript/employee.js"></script>
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+  </body>
+</html>
