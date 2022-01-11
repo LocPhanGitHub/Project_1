@@ -9,12 +9,12 @@ async function updateReimbursement() {
     const expensedetail = document.getElementById("expenseDetail").value;
     const expensestatus = document.getElementById("expenseStatus").value;
     const usercomment = document.getElementById("userComment").value;
-    
+
     let url = "http://127.0.0.1:5000/reimbursement/"
     let response = await fetch(url + requestId, {
-        method:"PATCH",
+        method: "PATCH",
         mode: "cors",
-        headers: {"Content-Type": "application/json"},
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
             "requestId": requestId,
             "userId": userId,
@@ -22,12 +22,13 @@ async function updateReimbursement() {
             "expenseAmount": expenseamount,
             "expenseDetail": expensedetail,
             "status": expensestatus,
-            "userComment": usercomment})
+            "userComment": usercomment
+        })
     })
-    
+
     if (response.status === 200) {
         let body = await response.json();
-        alert("Request Updated Successful!") 
+        alert("Request Updated Successful!")
     } else {
         let body = await response.json;
         alert("Update Request Failed!")
@@ -35,7 +36,7 @@ async function updateReimbursement() {
 }
 
 
-async function getAllReimbursementData(){
+async function getAllReimbursementData() {
     let url = "http://127.0.0.1:5000/reimbursement";
     let response = await fetch(url);
 
