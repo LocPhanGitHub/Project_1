@@ -12,12 +12,12 @@ This program will allow employees to create reimbursement requests, and all mana
 - Flask
 
 ## Features
-List of features:
+### List of features:
 - Reimbursement are automatically presented when logged in.
 - Able to sort the table by clicking the column head.
 - Able to create new reimbursement easily.
 - Reimbursement can be updated if a manager is presented.
-To-do list:
+### To-do list:
 - Creating function for the statistics from the reimbursements. 
 - Making the webpage more robust.
 
